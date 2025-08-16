@@ -70,33 +70,25 @@ cd Chat_with_Datawhale_langchain
 - pytorch>=2.0.0
 
 ```shell
-# 创建 Conda 环境
-conda create -n llm-universe python==3.9.0
+# 创建 虚拟 环境
+pyenv virtualenv 3.10.0 venv-3.10.0
 # 激活 Conda 环境
-conda activate llm-universe
+pyenv activate venv-3.10.0
 # 安装依赖项
-pip install -r requirements.txt
+pip install -r requirements.txt --no-dependencies
 ```
-
 
 #### 1.3 项目运行
 
 - 启动服务为本地 API
 ```shell
-# Linux 系统
-cd project/serve
-uvicorn api:app --reload 
+# Linux/Mac 系统
+./serve/run_api.sh
 ```
 
-```shell
-# Windows 系统
-cd project/serve
-python api.py
-```
 - 运行项目
 ```shell
-cd llm-universe/project/serve
-python run_gradio.py -model_name='chatglm_std' -embedding_model='m3e' -db_path='../../data_base/knowledge_db' -persist_path='../../data_base/vector_db'
+python ./serve/run_gradio.py
 ```
 ### 2、开发流程简述
 

@@ -90,7 +90,6 @@ class Model_center():
             for chain in self.chat_qa_chain_self.values():
                 chain.clear_history()
 
-
 def format_chat_prompt(message, chat_history):
     """
     该函数用于格式化聊天 prompt。
